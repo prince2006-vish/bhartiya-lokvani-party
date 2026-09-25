@@ -12,7 +12,7 @@ import {
 import toast from "react-hot-toast";
 import "./Leaders.css";
 
-const API_URL = "http://localhost:5000";
+const API_URL = "https://bhartiya-lokvani-api.onrender.com";
 
 const emptyForm = {
   name: "",

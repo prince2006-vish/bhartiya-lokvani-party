@@ -40,7 +40,7 @@ const Contact = () => {
     const checkApplication = async () => {
       try {
         const response = await fetch(
-          `http://localhost:5000/api/public/membership/${savedPhone}`,
+          `https://bhartiya-lokvani-api.onrender.com/api/public/membership/${savedPhone}`,
         );
 
         if (!response.ok) {
@@ -133,7 +133,7 @@ const Contact = () => {
 
       // Send data to backend
       const response = await fetch(
-        "http://localhost:5000/api/public/membership",
+        "https://bhartiya-lokvani-api.onrender.com/api/public/membership",
         {
           method: "POST",
           headers: {

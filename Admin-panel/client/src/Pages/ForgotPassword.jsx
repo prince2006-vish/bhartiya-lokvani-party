@@ -15,7 +15,7 @@ function ForgotPassword() {
 
   const [loading, setLoading] = useState(false);
 
-  const API_URL = "http://localhost:5000";
+  const API_URL = "https://bhartiya-lokvani-api.onrender.com";
 
   // STEP 1
   async function sendOtp(e) {

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Gallery.css";
 
-const API_URL = "http://localhost:5000";
+const API_URL = "https://bhartiya-lokvani-api.onrender.com";
 
 function Gallery() {
   const [gallery, setGallery] = useState([]);

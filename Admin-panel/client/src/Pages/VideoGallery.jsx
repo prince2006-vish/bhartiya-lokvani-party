@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./VideoGallery.css";
 
-const API_URL = "http://localhost:5000";
+const API_URL = "https://bhartiya-lokvani-api.onrender.com";
 
 function VideoGallery() {
   const [videos, setVideos] = useState([]);
@@ -234,7 +234,7 @@ function VideoGallery() {
       alert(
         editingId
           ? "Video successfully update हो गई"
-          : "Video successfully upload हो गई"
+          : "Video successfully upload हो गई",
       );
 
       resetForm();
@@ -287,7 +287,7 @@ function VideoGallery() {
 
   const handleDelete = async (id) => {
     const confirmDelete = window.confirm(
-      "क्या आप इस video को delete करना चाहते हैं?"
+      "क्या आप इस video को delete करना चाहते हैं?",
     );
 
     if (!confirmDelete) return;
@@ -359,7 +359,6 @@ function VideoGallery() {
 
   return (
     <div className="admin-video-page">
-
       {/* =========================
           HEADER
       ========================= */}
@@ -375,11 +374,7 @@ function VideoGallery() {
           FORM
       ========================= */}
 
-      <form
-        className="video-upload-form"
-        onSubmit={handleSubmit}
-      >
-
+      <form className="video-upload-form" onSubmit={handleSubmit}>
         {/* TITLE */}
 
         <div className="form-group">
@@ -397,7 +392,6 @@ function VideoGallery() {
         {/* CATEGORY + DATE */}
 
         <div className="form-row">
-
           <div className="form-group">
             <label>Category</label>
 
@@ -424,7 +418,6 @@ function VideoGallery() {
               onChange={handleChange}
             />
           </div>
-
         </div>
 
         {/* DESCRIPTION */}
@@ -444,21 +437,12 @@ function VideoGallery() {
         {/* VIDEO + THUMBNAIL */}
 
         <div className="form-row">
-
           <div className="form-group">
-            <label>
-              Video File {!editingId && "*"}
-            </label>
+            <label>Video File {!editingId && "*"}</label>
 
-            <input
-              type="file"
-              accept="video/*"
-              onChange={handleVideoChange}
-            />
+            <input type="file" accept="video/*" onChange={handleVideoChange} />
 
-            <small>
-              Maximum size: 100MB
-            </small>
+            <small>Maximum size: 100MB</small>
           </div>
 
           <div className="form-group">
@@ -470,7 +454,6 @@ function VideoGallery() {
               onChange={handleThumbnailChange}
             />
           </div>
-
         </div>
 
         {/* =========================
@@ -479,21 +462,13 @@ function VideoGallery() {
 
         {preview && (
           <div className="video-preview">
-
             <h3>Preview</h3>
 
             {previewType === "image" ? (
-              <img
-                src={preview}
-                alt="Thumbnail Preview"
-              />
+              <img src={preview} alt="Thumbnail Preview" />
             ) : (
-              <video
-                src={preview}
-                controls
-              />
+              <video src={preview} controls />
             )}
-
           </div>
         )}
 
@@ -502,29 +477,20 @@ function VideoGallery() {
         ========================= */}
 
         <div className="video-form-buttons">
-
-          <button
-            type="submit"
-            disabled={loading}
-          >
+          <button type="submit" disabled={loading}>
             {loading
               ? "Uploading..."
               : editingId
-              ? "Update Video"
-              : "Upload Video"}
+                ? "Update Video"
+                : "Upload Video"}
           </button>
 
           {editingId && (
-            <button
-              type="button"
-              onClick={resetForm}
-            >
+            <button type="button" onClick={resetForm}>
               Cancel
             </button>
           )}
-
         </div>
-
       </form>
 
       {/* =========================
@@ -532,7 +498,6 @@ function VideoGallery() {
       ========================= */}
 
       <div className="admin-video-list">
-
         <h2>Uploaded Videos</h2>
 
         {/* LOADING */}
@@ -542,84 +507,50 @@ function VideoGallery() {
             <p>Videos load हो रही हैं...</p>
           </div>
         ) : videos.length === 0 ? (
-          <p>
-            अभी कोई video upload नहीं हुई।
-          </p>
+          <p>अभी कोई video upload नहीं हुई।</p>
         ) : (
           <div className="admin-video-grid">
-
             {videos.map((video) => (
-              <div
-                className="admin-video-card"
-                key={video._id}
-              >
-
+              <div className="admin-video-card" key={video._id}>
                 {/* THUMBNAIL */}
 
                 <div className="admin-video-thumb">
-
                   {video.thumbnailUrl ? (
-                    <img
-                      src={video.thumbnailUrl}
-                      alt={video.title}
-                    />
+                    <img src={video.thumbnailUrl} alt={video.title} />
                   ) : (
-                    <video
-                      src={video.videoUrl}
-                      controls
-                    />
+                    <video src={video.videoUrl} controls />
                   )}
-
                 </div>
 
                 {/* INFO */}
 
                 <div className="admin-video-info">
+                  <h3>{video.title}</h3>
 
-                  <h3>
-                    {video.title}
-                  </h3>
+                  <span>{video.category}</span>
 
-                  <span>
-                    {video.category}
-                  </span>
-
-                  <p>
-                    {video.date}
-                  </p>
+                  <p>{video.date}</p>
 
                   {/* ACTIONS */}
 
                   <div className="admin-video-actions">
-
-                    <button
-                      type="button"
-                      onClick={() => handleEdit(video)}
-                    >
+                    <button type="button" onClick={() => handleEdit(video)}>
                       Edit
                     </button>
 
                     <button
                       type="button"
-                      onClick={() =>
-                        handleDelete(video._id)
-                      }
+                      onClick={() => handleDelete(video._id)}
                     >
                       Delete
                     </button>
-
                   </div>
-
                 </div>
-
               </div>
             ))}
-
           </div>
         )}
-
       </div>
-
     </div>
   );
 }

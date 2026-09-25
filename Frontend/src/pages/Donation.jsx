@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import jsPDF from "jspdf";
 import "./Donation.css";
 
-const API_URL = "http://localhost:5000";
+const API_URL = "https://bhartiya-lokvani-api.onrender.com";
 
 const amounts = [100, 500, 1000, 2500, 5000];
 

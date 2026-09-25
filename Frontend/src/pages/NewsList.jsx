@@ -6,7 +6,9 @@ const NewsList = () => {
 
   const fetchNews = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/public/news");
+      const response = await fetch(
+        "https://bhartiya-lokvani-api.onrender.com/api/public/news",
+      );
 
       if (!response.ok) {
         throw new Error("News fetch failed");
@@ -22,7 +24,7 @@ const NewsList = () => {
   };
 
   useEffect(() => {
-    fetchNews(); 
+    fetchNews();
   }, []);
 
   return (

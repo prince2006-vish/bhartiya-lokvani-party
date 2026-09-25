@@ -1,4 +1,4 @@
-const API = "http://localhost:5000/api";
+const API = "https://bhartiya-lokvani-api.onrender.com/api";
 
 async function request(path, options = {}) {
   const token = localStorage.getItem("adminToken");

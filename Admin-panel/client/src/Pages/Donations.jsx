@@ -3,7 +3,7 @@ import { Trash2, RefreshCw } from "lucide-react";
 import { toast } from "react-hot-toast";
 import "./Donations.css";
 
-const API_URL = "http://localhost:5000";
+const API_URL = "https://bhartiya-lokvani-api.onrender.com";
 
 function Donations() {
   const [donations, setDonations] = useState([]);
@@ -45,7 +45,7 @@ function Donations() {
         console.error("Server returned:", text);
 
         throw new Error(
-          "Backend ने JSON की जगह HTML response दिया। Check करें कि backend localhost:5000 पर चल रहा है।",
+          "Backend ने JSON की जगह HTML response दिया। Check करें कि backend bhartiya-lokvani-api.onrender.com पर चल रहा है।",
         );
       }
 

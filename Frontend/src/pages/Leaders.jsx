@@ -3,7 +3,7 @@ import { ArrowRight, UserRound } from "lucide-react";
 import { Link } from "react-router-dom";
 import "./Leaders.css";
 
-const API_URL = "http://localhost:5000";
+const API_URL = "https://bhartiya-lokvani-api.onrender.com";
 
 function Leaders() {
   const [leaders, setLeaders] = useState([]);

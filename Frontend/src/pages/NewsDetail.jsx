@@ -9,7 +9,7 @@ const NewsDetail = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/public/news")
+    fetch("https://bhartiya-lokvani-api.onrender.com/api/public/news")
       .then((res) => res.json())
       .then((data) => {
         const selectedNews = data.find((item) => item._id === id);
@@ -23,11 +23,7 @@ const NewsDetail = () => {
   }, [id]);
 
   if (loading) {
-    return (
-      <div className="detail-loading">
-        समाचार लोड हो रहा है...
-      </div>
-    );
+    return <div className="detail-loading">समाचार लोड हो रहा है...</div>;
   }
 
   if (!news) {
@@ -41,38 +37,29 @@ const NewsDetail = () => {
 
   return (
     <div className="news-detail-page">
-
       <div className="news-detail-container">
-
         <Link to="/" className="back-link">
           ← वापस जाएँ
         </Link>
 
         <div className="detail-date">
           {news.date
-            ? new Date(news.date)
-                .toLocaleDateString("en-GB", {
-                  day: "2-digit",
-                  month: "long",
-                  year: "numeric",
-                })
+            ? new Date(news.date).toLocaleDateString("en-GB", {
+                day: "2-digit",
+                month: "long",
+                year: "numeric",
+              })
             : ""}
         </div>
 
         <h1>{news.title}</h1>
 
         {news.category && (
-          <div className="detail-category">
-            {news.category}
-          </div>
+          <div className="detail-category">{news.category}</div>
         )}
 
-        <div className="detail-description">
-          {news.description}
-        </div>
-
+        <div className="detail-description">{news.description}</div>
       </div>
-
     </div>
   );
 };

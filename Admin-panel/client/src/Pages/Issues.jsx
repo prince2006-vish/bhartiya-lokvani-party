@@ -3,7 +3,7 @@ import { Plus, Pencil, Trash2, X } from "lucide-react";
 import toast from "react-hot-toast";
 import "./Issues.css";
 
-const API_URL = "http://localhost:5000";
+const API_URL = "https://bhartiya-lokvani-api.onrender.com";
 
 const emptyForm = {
   title: "",
@@ -25,7 +25,6 @@ function Issues() {
   const [form, setForm] = useState(emptyForm);
 
   const token = localStorage.getItem("adminToken");
-
 
   // =====================================================
   // FETCH ISSUES
@@ -57,11 +56,9 @@ function Issues() {
     }
   };
 
-
   useEffect(() => {
     fetchIssues();
   }, []);
-
 
   // =====================================================
   // INPUT CHANGE
@@ -76,7 +73,6 @@ function Issues() {
     }));
   };
 
-
   // =====================================================
   // OPEN ADD FORM
   // =====================================================
@@ -88,7 +84,6 @@ function Issues() {
 
     setShowForm(true);
   };
-
 
   // =====================================================
   // OPEN EDIT FORM
@@ -108,7 +103,6 @@ function Issues() {
     setShowForm(true);
   };
 
-
   // =====================================================
   // CLOSE FORM
   // =====================================================
@@ -120,7 +114,6 @@ function Issues() {
 
     setForm(emptyForm);
   };
-
 
   // =====================================================
   // SUBMIT
@@ -172,7 +165,6 @@ function Issues() {
       closeForm();
 
       fetchIssues();
-
     } catch (error) {
       console.error(error);
 
@@ -180,29 +172,25 @@ function Issues() {
     }
   };
 
-
   // =====================================================
   // DELETE
   // =====================================================
 
   const handleDelete = async (id) => {
     const confirmDelete = window.confirm(
-      "क्या आप इस मुद्दे को हटाना चाहते हैं?"
+      "क्या आप इस मुद्दे को हटाना चाहते हैं?",
     );
 
     if (!confirmDelete) return;
 
     try {
-      const response = await fetch(
-        `${API_URL}/api/issues/${id}`,
-        {
-          method: "DELETE",
+      const response = await fetch(`${API_URL}/api/issues/${id}`, {
+        method: "DELETE",
 
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
 
       const data = await response.json();
 
@@ -213,7 +201,6 @@ function Issues() {
       toast.success("मुद्दा हटा दिया गया");
 
       fetchIssues();
-
     } catch (error) {
       console.error(error);
 
@@ -221,63 +208,37 @@ function Issues() {
     }
   };
 
-
   return (
     <div className="issues-page">
-
       {/* HEADER */}
       <div className="issues-header">
-
         <div>
           <h1>हमारी राजनीति</h1>
 
-          <p>
-            पार्टी से संबंधित मुद्दों को यहां प्रबंधित करें।
-          </p>
+          <p>पार्टी से संबंधित मुद्दों को यहां प्रबंधित करें।</p>
         </div>
 
-        <button
-          className="add-issue-btn"
-          onClick={openAddForm}
-        >
+        <button className="add-issue-btn" onClick={openAddForm}>
           <Plus size={20} />
-
           नया मुद्दा जोड़ें
         </button>
-
       </div>
-
 
       {/* FORM */}
       {showForm && (
         <div className="issue-form-card">
-
           <div className="issue-form-header">
+            <h2>{editingId ? "मुद्दा एडिट करें" : "नया मुद्दा जोड़ें"}</h2>
 
-            <h2>
-              {editingId
-                ? "मुद्दा एडिट करें"
-                : "नया मुद्दा जोड़ें"}
-            </h2>
-
-            <button
-              className="close-form-btn"
-              onClick={closeForm}
-            >
+            <button className="close-form-btn" onClick={closeForm}>
               <X size={21} />
             </button>
-
           </div>
 
-
           <form onSubmit={handleSubmit}>
-
             {/* TITLE */}
             <div className="form-group">
-
-              <label>
-                मुद्दे का नाम *
-              </label>
+              <label>मुद्दे का नाम *</label>
 
               <input
                 type="text"
@@ -286,16 +247,11 @@ function Issues() {
                 onChange={handleChange}
                 placeholder="जैसे - शिक्षा"
               />
-
             </div>
-
 
             {/* CATEGORY */}
             <div className="form-group">
-
-              <label>
-                श्रेणी
-              </label>
+              <label>श्रेणी</label>
 
               <input
                 type="text"
@@ -304,16 +260,11 @@ function Issues() {
                 onChange={handleChange}
                 placeholder="जैसे - शिक्षा, रोजगार, कृषि"
               />
-
             </div>
-
 
             {/* SHORT DESCRIPTION */}
             <div className="form-group">
-
-              <label>
-                संक्षिप्त विवरण
-              </label>
+              <label>संक्षिप्त विवरण</label>
 
               <textarea
                 name="shortDescription"
@@ -322,16 +273,11 @@ function Issues() {
                 rows="3"
                 placeholder="कार्ड पर दिखाई देने वाला छोटा विवरण"
               />
-
             </div>
-
 
             {/* DESCRIPTION */}
             <div className="form-group">
-
-              <label>
-                विस्तृत विवरण
-              </label>
+              <label>विस्तृत विवरण</label>
 
               <textarea
                 name="description"
@@ -340,81 +286,42 @@ function Issues() {
                 rows="8"
                 placeholder="मुद्दे का पूरा विवरण यहां लिखें"
               />
-
             </div>
-
 
             {/* STATUS */}
             <div className="form-group">
+              <label>स्थिति</label>
 
-              <label>
-                स्थिति
-              </label>
+              <select name="status" value={form.status} onChange={handleChange}>
+                <option value="प्रकाशित">प्रकाशित</option>
 
-              <select
-                name="status"
-                value={form.status}
-                onChange={handleChange}
-              >
-
-                <option value="प्रकाशित">
-                  प्रकाशित
-                </option>
-
-                <option value="ड्राफ्ट">
-                  ड्राफ्ट
-                </option>
-
+                <option value="ड्राफ्ट">ड्राफ्ट</option>
               </select>
-
             </div>
-
 
             {/* BUTTONS */}
             <div className="issue-form-actions">
-
-              <button
-                type="button"
-                className="cancel-btn"
-                onClick={closeForm}
-              >
+              <button type="button" className="cancel-btn" onClick={closeForm}>
                 रद्द करें
               </button>
 
-              <button
-                type="submit"
-                className="save-issue-btn"
-              >
-                {editingId
-                  ? "अपडेट करें"
-                  : "मुद्दा सेव करें"}
+              <button type="submit" className="save-issue-btn">
+                {editingId ? "अपडेट करें" : "मुद्दा सेव करें"}
               </button>
-
             </div>
-
           </form>
-
         </div>
       )}
 
-
       {/* TABLE */}
       <div className="issues-table-card">
-
         {loading ? (
-          <div className="issues-loading">
-            मुद्दे लोड हो रहे हैं...
-          </div>
+          <div className="issues-loading">मुद्दे लोड हो रहे हैं...</div>
         ) : issues.length === 0 ? (
-          <div className="issues-empty">
-            अभी कोई मुद्दा नहीं जोड़ा गया है।
-          </div>
+          <div className="issues-empty">अभी कोई मुद्दा नहीं जोड़ा गया है।</div>
         ) : (
-
           <div className="issues-table-wrapper">
-
             <table className="issues-table">
-
               <thead>
                 <tr>
                   <th>मुद्दा</th>
@@ -425,17 +332,11 @@ function Issues() {
                 </tr>
               </thead>
 
-
               <tbody>
-
                 {issues.map((issue) => (
-
                   <tr key={issue._id}>
-
                     <td>
-                      <div className="issue-title">
-                        {issue.title}
-                      </div>
+                      <div className="issue-title">{issue.title}</div>
 
                       {issue.shortDescription && (
                         <div className="issue-short">
@@ -444,16 +345,11 @@ function Issues() {
                       )}
                     </td>
 
-
                     <td>
-                      <span className="category-badge">
-                        {issue.category}
-                      </span>
+                      <span className="category-badge">{issue.category}</span>
                     </td>
 
-
                     <td>
-
                       <span
                         className={
                           issue.status === "प्रकाशित"
@@ -463,62 +359,40 @@ function Issues() {
                       >
                         {issue.status}
                       </span>
-
                     </td>
-
 
                     <td>
                       {issue.createdAt
-                        ? new Date(
-                            issue.createdAt
-                          ).toLocaleDateString("hi-IN")
+                        ? new Date(issue.createdAt).toLocaleDateString("hi-IN")
                         : "-"}
                     </td>
 
-
                     <td>
-
                       <div className="issue-actions">
-
                         <button
                           className="edit-btn"
-                          onClick={() =>
-                            openEditForm(issue)
-                          }
+                          onClick={() => openEditForm(issue)}
                           title="Edit"
                         >
                           <Pencil size={18} />
                         </button>
 
-
                         <button
                           className="delete-btn"
-                          onClick={() =>
-                            handleDelete(issue._id)
-                          }
+                          onClick={() => handleDelete(issue._id)}
                           title="Delete"
                         >
                           <Trash2 size={18} />
                         </button>
-
                       </div>
-
                     </td>
-
                   </tr>
-
                 ))}
-
               </tbody>
-
             </table>
-
           </div>
-
         )}
-
       </div>
-
     </div>
   );
 }

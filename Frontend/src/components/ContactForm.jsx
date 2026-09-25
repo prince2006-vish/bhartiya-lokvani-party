@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./ContactFrom.css";
 
-const API_URL = "http://localhost:5000";
+const API_URL = "https://bhartiya-lokvani-api.onrender.com";
 
 export default function ContactFrom() {
   const [form, setForm] = useState({

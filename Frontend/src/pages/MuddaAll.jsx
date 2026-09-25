@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "../components/Mudda.css";
 
-const API_URL = "http://localhost:5000";
+const API_URL = "https://bhartiya-lokvani-api.onrender.com";
 
 const variants = ["cream", "blue", "green"];
 
@@ -34,76 +34,53 @@ export default function Mudda() {
   return (
     <section className="policies-section">
       <div className="policies-container">
-
         {/* Header */}
         <div className="policies-header">
-          <span className="policies-label">
-            हमारी नीतियाँ
-          </span>
+          <span className="policies-label">हमारी नीतियाँ</span>
 
-          <h2>
-            बदलाव के लिए साफ़ प्राथमिकताएँ
-          </h2>
+          <h2>बदलाव के लिए साफ़ प्राथमिकताएँ</h2>
 
-          <p>
-            हमारे मुद्दे घोषणाओं से आगे, जमीन पर काम की दिशा दिखाते हैं।
-          </p>
+          <p>हमारे मुद्दे घोषणाओं से आगे, जमीन पर काम की दिशा दिखाते हैं।</p>
 
           <div className="policies-line"></div>
         </div>
 
         {/* Loading */}
         {loading && (
-          <div className="policies-loading">
-            मुद्दे लोड हो रहे हैं...
-          </div>
+          <div className="policies-loading">मुद्दे लोड हो रहे हैं...</div>
         )}
 
         {/* Empty */}
         {!loading && policies.length === 0 && (
-          <div className="policies-empty">
-            अभी कोई मुद्दा प्रकाशित नहीं है।
-          </div>
+          <div className="policies-empty">अभी कोई मुद्दा प्रकाशित नहीं है।</div>
         )}
 
         {/* Cards */}
         {!loading && policies.length > 0 && (
           <div className="policies-grid">
-
             {policies.map((policy, index) => (
               <article
                 key={policy._id}
-                className={`policy-card1 ${
-                  variants[index % variants.length]
-                }`}
+                className={`policy-card1 ${variants[index % variants.length]}`}
               >
                 <span className="policy-number">
                   {String(index + 1).padStart(2, "0")}
                 </span>
 
                 <div className="policy-content">
+                  <h3>{policy.title}</h3>
 
-                  <h3>
-                    {policy.title}
-                  </h3>
-
-                  <p>
-                    {policy.shortDescription ||
-                      policy.description}
-                  </p>
+                  <p>{policy.shortDescription || policy.description}</p>
 
                   <Link to={`/mudda/${policy._id}`}>
                     विस्तार से जानें
                     <span>→</span>
                   </Link>
-
                 </div>
               </article>
             ))}
-
           </div>
         )}
-
       </div>
     </section>
   );

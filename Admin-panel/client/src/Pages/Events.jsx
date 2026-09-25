@@ -3,7 +3,7 @@ import { CalendarDays, Edit, Trash2, Video, Plus, X } from "lucide-react";
 import toast from "react-hot-toast";
 import "./Events.css";
 
-const API_URL = "http://localhost:5000";
+const API_URL = "https://bhartiya-lokvani-api.onrender.com";
 
 const emptyForm = {
   title: "",
