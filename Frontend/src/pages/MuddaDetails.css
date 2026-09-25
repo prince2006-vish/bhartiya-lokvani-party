@@ -1,0 +1,165 @@
+.mudda-details-section {
+  width: 100%;
+  padding: 80px 20px;
+  background: #fff;
+  min-height: 70vh;
+}
+
+.mudda-details-container {
+  width: min(1000px, 100%);
+  margin: 0 auto;
+}
+
+/* Back Link */
+
+.mudda-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #e86f05;
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 35px;
+  transition: 0.3s ease;
+}
+
+.mudda-back-link:hover {
+  transform: translateX(-4px);
+}
+
+/* Header */
+
+.mudda-details-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.mudda-category {
+  display: inline-block;
+  padding: 7px 18px;
+  border-radius: 30px;
+  background: #fff3e6;
+  color: #e86f05;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+.mudda-details-header h1 {
+  margin: 0;
+  color: #17233f;
+  font-size: clamp(32px, 5vw, 52px);
+  line-height: 1.25;
+  font-weight: 800;
+}
+
+.mudda-details-line {
+  width: 70px;
+  height: 4px;
+  background: #e86f05;
+  border-radius: 10px;
+  margin: 22px auto 0;
+}
+
+/* Short Description */
+
+.mudda-short-description {
+  background: #f8f9fb;
+  border-left: 4px solid #e86f05;
+  padding: 22px 25px;
+  margin-bottom: 35px;
+  color: #3f4858;
+  font-size: 18px;
+  line-height: 1.8;
+  font-weight: 600;
+}
+
+/* Full Description */
+
+.mudda-full-description {
+  color: #424b5a;
+  font-size: 17px;
+  line-height: 2;
+}
+
+.mudda-full-description p {
+  margin: 0 0 22px;
+}
+
+/* Footer */
+
+.mudda-details-footer {
+  margin-top: 45px;
+  padding-top: 30px;
+  border-top: 1px solid #e5e5e5;
+}
+
+.mudda-back-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 13px 24px;
+  border-radius: 8px;
+  background: #e86f05;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+  transition: 0.3s ease;
+}
+
+.mudda-back-btn:hover {
+  background: #c95d00;
+  transform: translateY(-2px);
+}
+
+/* Loading */
+
+.mudda-loading {
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #e86f05;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* Error */
+
+.mudda-error {
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.mudda-error h2 {
+  color: #17233f;
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+
+.mudda-error p {
+  color: #666;
+  margin-bottom: 25px;
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+  .mudda-details-section {
+    padding: 55px 16px;
+  }
+
+  .mudda-details-header h1 {
+    font-size: 34px;
+  }
+
+  .mudda-short-description {
+    font-size: 16px;
+    padding: 18px;
+  }
+
+  .mudda-full-description {
+    font-size: 16px;
+    line-height: 1.85;
+  }
+}

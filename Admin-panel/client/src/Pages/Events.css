@@ -1,0 +1,281 @@
+.events-page {
+  padding: 30px;
+}
+
+.events-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.events-header h1 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  font-size: 28px;
+}
+
+.events-header p {
+  margin: 7px 0 0;
+  color: #777;
+}
+
+.add-event-btn {
+  border: none;
+  background: #111827;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.event-form-card {
+  background: white;
+  border-radius: 14px;
+  padding: 25px;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
+}
+
+.event-form-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 22px;
+}
+
+.event-form-header h2 {
+  margin: 0;
+}
+
+.close-form-btn {
+  border: none;
+  background: #f3f4f6;
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-bottom: 18px;
+}
+
+.form-group.full {
+  grid-column: 1 / -1;
+}
+
+.form-group label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 11px 13px;
+  font-size: 14px;
+  outline: none;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  border-color: #111827;
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+.zoom-section {
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 10px 0 20px;
+}
+
+.zoom-title {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 18px;
+}
+
+.zoom-title h3 {
+  margin: 0;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.cancel-btn,
+.save-event-btn {
+  padding: 11px 18px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.cancel-btn {
+  background: #e5e7eb;
+}
+
+.save-event-btn {
+  background: #111827;
+  color: white;
+}
+
+.save-event-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.events-list {
+  display: grid;
+  gap: 18px;
+}
+
+.admin-event-card {
+  display: flex;
+  background: white;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.06);
+}
+
+.admin-event-image {
+  width: 220px;
+  min-height: 190px;
+  object-fit: cover;
+}
+
+.admin-event-content {
+  flex: 1;
+  padding: 20px;
+}
+
+.admin-event-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.event-status {
+  background: #dcfce7;
+  color: #166534;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.event-actions {
+  display: flex;
+  gap: 7px;
+}
+
+.event-actions button {
+  border: none;
+  background: #f3f4f6;
+  width: 35px;
+  height: 35px;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.event-actions .delete-btn {
+  color: #dc2626;
+}
+
+.admin-event-content h2 {
+  margin: 15px 0 10px;
+}
+
+.event-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  color: #555;
+  font-size: 14px;
+}
+
+.admin-event-content p {
+  color: #666;
+  line-height: 1.6;
+}
+
+.zoom-info {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: #eff6ff;
+  color: #2563eb;
+  padding: 8px 12px;
+  border-radius: 7px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.empty-events {
+  background: white;
+  text-align: center;
+  padding: 60px 20px;
+  border-radius: 14px;
+  color: #777;
+}
+
+@media (max-width: 700px) {
+  .events-page {
+    padding: 18px;
+  }
+
+  .events-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-group.full {
+    grid-column: auto;
+  }
+
+  .admin-event-card {
+    flex-direction: column;
+  }
+
+  .admin-event-image {
+    width: 100%;
+    height: 200px;
+  }
+}

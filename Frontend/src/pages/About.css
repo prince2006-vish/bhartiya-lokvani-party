@@ -1,0 +1,1090 @@
+.about-page {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  background: #fff;
+  color: #222;
+}
+
+.about-container {
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+/* ================= HERO ================= */
+
+.about-hero {
+  width: 100%;
+  min-height: 650px;
+  padding: 90px 0;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(90deg, #fff7ef 0%, #fff7ef 48%, #f5dfca 100%);
+}
+
+.about-hero .about-container {
+  display: grid;
+  grid-template-columns: 1fr 0.9fr;
+  gap: 70px;
+  align-items: center;
+}
+
+.about-hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.about-tag,
+.section-heading span {
+  display: inline-block;
+  color: #d95f08;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin-bottom: 14px;
+  text-transform: uppercase;
+}
+
+.about-hero h1 {
+  margin: 0;
+  color: #9e3f00;
+  font-size: clamp(42px, 5vw, 72px);
+  line-height: 1.1;
+  font-weight: 800;
+}
+
+.about-hero h2 {
+  margin: 18px 0;
+  color: #222;
+  font-size: clamp(24px, 3vw, 38px);
+  line-height: 1.25;
+}
+
+.about-hero p {
+  max-width: 680px;
+  margin: 0;
+  color: #555;
+  font-size: 18px;
+  line-height: 1.9;
+}
+
+.about-hero-image img {
+  width: 100%;
+  height: 470px;
+  object-fit: cover;
+  display: block;
+  border-radius: 28px;
+  border: 8px solid #fff;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.18);
+}
+
+/* ================= COMMON ================= */
+
+.about-section {
+  width: 100%;
+  padding: 100px 0;
+  background: #fff;
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 55px;
+}
+
+.section-heading h2 {
+  margin: 0;
+  color: #222;
+  font-size: clamp(30px, 4vw, 46px);
+  line-height: 1.2;
+}
+
+/* ================= INTRO ================= */
+
+.about-intro-grid {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 65px;
+  align-items: center;
+}
+
+.about-intro-image img {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  display: block;
+  border-radius: 22px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+}
+
+.about-intro-text h3 {
+  margin: 0 0 22px;
+  color: #a84605;
+  font-size: 32px;
+}
+
+.about-intro-text p {
+  margin: 0 0 20px;
+  color: #555;
+  font-size: 17px;
+  line-height: 1.9;
+}
+
+/* ================= VISION MISSION ================= */
+
+.vision-mission-section {
+  width: 100%;
+  padding: 100px 0;
+  background: #f4ece5;
+}
+
+.section-heading.light span {
+  color: #390fd3;
+}
+
+.section-heading.light h2 {
+  color: #201e1e;
+}
+
+.vision-mission-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 30px;
+}
+
+.vision-card,
+.mission-card {
+  min-height: 330px;
+  padding: 45px;
+  border-radius: 22px;
+  background: rgba(222, 141, 18, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(8px);
+  color: #424141;
+}
+
+.vision-icon,
+.mission-icon {
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 25px;
+  border-radius: 50%;
+  background: #fff;
+  color: #fd901c;
+}
+
+.vision-card h3,
+.mission-card h3 {
+  margin: 0 0 18px;
+  font-size: 30px;
+}
+
+.vision-card p,
+.mission-card p {
+  margin: 0 0 15px;
+  color: #7f6c5c;
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+/* ================= IMAGE BANNER ================= */
+
+.about-image-banner {
+  width: 100%;
+  height: 500px;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-image-banner > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.about-image-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.2));
+}
+
+.about-image-overlay > div {
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto;
+  color: #fff;
+}
+
+.about-image-overlay span {
+  color: #ffb36d;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.about-image-overlay h2 {
+  max-width: 650px;
+  margin: 12px 0;
+  font-size: clamp(35px, 5vw, 58px);
+  line-height: 1.15;
+}
+
+.about-image-overlay p {
+  max-width: 620px;
+  margin: 0;
+  color: #f5f5f5;
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+/* ================= VALUES ================= */
+
+.values-section {
+  background: #fafafa;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.value-card {
+  padding: 35px 30px;
+  background: #fff;
+  border-radius: 18px;
+  border: 1px solid #eee;
+  transition: all 0.3s ease;
+}
+
+.value-card:hover {
+  transform: translateY(-7px);
+  border-color: #f1b17c;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.09);
+}
+
+.value-card svg {
+  color: #df680b;
+  margin-bottom: 18px;
+}
+
+.value-card h3 {
+  margin: 0 0 12px;
+  font-size: 22px;
+}
+
+.value-card p {
+  margin: 0;
+  color: #666;
+  line-height: 1.75;
+}
+
+/* ================= PRIORITIES ================= */
+
+.priorities-section {
+  width: 100%;
+  padding: 100px 0;
+  background: #fff;
+}
+
+.priority-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 60px;
+}
+
+.priority-item {
+  display: flex;
+  gap: 20px;
+  padding: 28px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.priority-item > span {
+  min-width: 52px;
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #fff0e3;
+  color: #d85f07;
+  font-weight: 800;
+}
+
+.priority-item h3 {
+  margin: 0 0 8px;
+  color: #222;
+  font-size: 21px;
+}
+
+.priority-item p {
+  margin: 0;
+  color: #666;
+  line-height: 1.7;
+}
+
+/* ================= ORGANIZATION ================= */
+
+.organization-content {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 65px;
+  align-items: center;
+}
+
+.organization-image img {
+  width: 100%;
+  height: 400px;
+  display: block;
+  object-fit: cover;
+  border-radius: 22px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+}
+
+.organization-text p {
+  margin: 0 0 22px;
+  color: #555;
+  font-size: 17px;
+  line-height: 1.9;
+}
+
+/* ================= FUTURE ================= */
+
+.future-section {
+  width: 100%;
+  padding: 100px 0;
+  background: #f7f7f7;
+}
+
+.future-box {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 30px;
+  align-items: center;
+  padding: 55px;
+  background: #fff;
+  border-radius: 25px;
+  box-shadow: 0 20px 55px rgba(0, 0, 0, 0.08);
+}
+
+.future-icon {
+  width: 85px;
+  height: 85px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff0e3;
+  color: #df690b;
+  border-radius: 50%;
+}
+
+.future-box span {
+  color: #d85b00;
+  font-weight: 800;
+}
+
+.future-box h2 {
+  margin: 10px 0 15px;
+  color: #222;
+  font-size: 34px;
+}
+
+.future-box p {
+  margin: 0;
+  color: #666;
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+/* ================= CTA ================= */
+
+.about-cta {
+  width: 100%;
+  padding: 95px 0;
+  text-align: center;
+  background: linear-gradient(135deg, #9f3f00, #d9650b);
+  color: #fff;
+}
+
+.about-cta h2 {
+  margin: 0 0 15px;
+  font-size: clamp(34px, 5vw, 52px);
+}
+
+.about-cta p {
+  margin: 0 0 30px;
+  color: #ffe8d3;
+  font-size: 18px;
+}
+
+.about-cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.cta-primary,
+.cta-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 14px 26px;
+  border-radius: 9px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: 0.3s ease;
+}
+
+.cta-primary {
+  background: #fff;
+  color: #a84605;
+}
+
+.cta-secondary {
+  color: #fff;
+  border: 1px solid #fff;
+}
+
+.cta-primary:hover,
+.cta-secondary:hover {
+  transform: translateY(-3px);
+}
+
+/* ================= TABLET ================= */
+
+@media (max-width: 900px) {
+  .about-hero .about-container {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .about-hero-image img {
+    height: 400px;
+  }
+
+  .about-intro-grid,
+  .organization-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .vision-mission-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .values-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .priority-list {
+    grid-template-columns: 1fr;
+  }
+
+  .people-first-content {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 600px) {
+  .about-container {
+    width: calc(100% - 30px);
+  }
+
+  .about-section,
+  .vision-mission-section,
+  .priorities-section,
+  .future-section {
+    padding: 65px 0;
+  }
+
+  .about-hero {
+    padding: 65px 0;
+    min-height: auto;
+  }
+
+  .about-hero h1 {
+    font-size: 42px;
+  }
+
+  .about-hero h2 {
+    font-size: 25px;
+  }
+
+  .about-hero p {
+    font-size: 16px;
+    line-height: 1.8;
+  }
+
+  .about-hero-image img {
+    height: 300px;
+    border-width: 5px;
+    border-radius: 18px;
+  }
+
+  .about-intro-image img {
+    height: 320px;
+  }
+
+  .about-intro-text h3 {
+    font-size: 27px;
+  }
+
+  .about-intro-text p {
+    font-size: 16px;
+  }
+
+  .vision-card,
+  .mission-card {
+    padding: 30px 24px;
+    min-height: auto;
+  }
+
+  .vision-card h3,
+  .mission-card h3 {
+    font-size: 26px;
+  }
+
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-image-banner {
+    height: 430px;
+  }
+
+  .about-image-overlay h2 {
+    font-size: 36px;
+  }
+
+  .about-image-overlay p {
+    font-size: 16px;
+  }
+
+  .priority-item {
+    gap: 14px;
+  }
+
+  .organization-image img {
+    height: 300px;
+  }
+
+  .future-box {
+    grid-template-columns: 1fr;
+    padding: 32px 24px;
+    text-align: center;
+  }
+
+  .future-icon {
+    margin: 0 auto;
+  }
+
+  .future-box h2 {
+    font-size: 28px;
+  }
+
+  .about-cta {
+    padding: 70px 0;
+  }
+}
+
+
+
+/* =====================================================
+   NATIONAL PRESIDENT PROFILE
+===================================================== */
+
+.president-profile {
+  width: 100%;
+  padding: 100px 0;
+  background: #fffaf5;
+  overflow: hidden;
+}
+
+.president-container {
+  width: min(1180px, 92%);
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+
+  gap: 80px;
+  align-items: center;
+}
+
+
+/* =====================================================
+   LEFT SIDE
+===================================================== */
+
+.president-left {
+  width: 100%;
+  text-align: center;
+}
+
+
+/* IMAGE BOX */
+
+.president-photo-box {
+  width: 100%;
+  max-width: 430px;
+  height: 520px;
+
+  margin: 0 auto;
+
+  padding: 8px;
+
+  background: #ffffff;
+
+  border: 5px solid #e86f05;
+
+  border-radius: 38px;
+
+  position: relative;
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.13);
+}
+
+
+/* Decorative corners */
+
+.president-photo-box::before {
+  content: "";
+
+  position: absolute;
+
+  width: 80px;
+  height: 80px;
+
+  left: -18px;
+  top: -18px;
+
+  border-left: 5px solid #e86f05;
+  border-top: 5px solid #e86f05;
+
+  border-radius: 25px 0 0 0;
+
+  z-index: 1;
+}
+
+
+.president-photo-box::after {
+  content: "";
+
+  position: absolute;
+
+  width: 80px;
+  height: 80px;
+
+  right: -18px;
+  bottom: -18px;
+
+  border-right: 5px solid #e86f05;
+  border-bottom: 5px solid #e86f05;
+
+  border-radius: 0 0 25px 0;
+
+  z-index: 1;
+}
+
+
+/* IMAGE */
+
+.president-photo-box img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  border-radius: 28px;
+
+  position: relative;
+
+  z-index: 2;
+}
+
+
+/* =====================================================
+   NAME UNDER IMAGE
+===================================================== */
+
+.president-name1 {
+  margin-top: 25px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 25px;
+}
+
+
+.president-name1 span {
+  width: 80px;
+  height: 3px;
+
+  background: #e86f05;
+
+  display: block;
+}
+
+
+.president-name1 h2 {
+  margin: 0;
+
+  color: #d45d00;
+
+  font-size: 34px;
+
+  font-weight: 800;
+
+  white-space: nowrap;
+}
+
+
+.president-designation {
+  margin: 7px 0 0;
+
+  color: #111;
+
+  font-size: 22px;
+
+  font-weight: 700;
+}
+
+
+/* =====================================================
+   RIGHT SIDE
+===================================================== */
+
+.president-right {
+  width: 100%;
+}
+
+
+/* BADGE */
+
+.president-badge {
+  display: inline-block;
+
+  padding: 9px 25px;
+
+  background: #e86f05;
+
+  color: white;
+
+  border-radius: 30px;
+
+  font-size: 17px;
+
+  font-weight: 700;
+
+  margin-bottom: 18px;
+}
+
+
+/* NAME */
+
+.president-right h1 {
+  margin: 0;
+
+  color: #c95400;
+
+  font-size: clamp(42px, 5vw, 64px);
+
+  line-height: 1.15;
+
+  font-weight: 800;
+
+  white-space: normal;
+
+  word-break: normal;
+}
+
+
+/* PARTY NAME */
+
+.president-right h3 {
+  margin: 12px 0 20px;
+
+  color: #222;
+
+  font-size: 25px;
+
+  font-weight: 700;
+
+  white-space: normal;
+}
+
+
+/* ORANGE LINE */
+
+.orange-line {
+  width: 85px;
+  height: 5px;
+
+  background: #e86f05;
+
+  border-radius: 20px;
+
+  margin-bottom: 28px;
+}
+
+
+/* =====================================================
+   INTRO HEADING
+===================================================== */
+
+.intro-heading {
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  margin-bottom: 18px;
+}
+
+
+.intro-icon {
+  width: 48px;
+  height: 48px;
+
+  border-radius: 50%;
+
+  background: #e86f05;
+
+  color: white;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  font-size: 23px;
+}
+
+
+.intro-heading h2 {
+  margin: 0;
+
+  color: #e86f05;
+
+  font-size: 30px;
+
+  font-weight: 800;
+}
+
+
+/* =====================================================
+   CONTENT
+===================================================== */
+
+.president-content {
+  width: 100%;
+}
+
+
+.president-content p {
+  margin: 0 0 18px;
+
+  color: #333;
+
+  font-size: 18px;
+
+  line-height: 1.8;
+
+  text-align: left;
+
+  white-space: normal;
+
+  word-break: normal;
+
+  overflow-wrap: normal;
+}
+
+
+/* =====================================================
+   QUOTE
+===================================================== */
+
+.president-quote {
+  margin-top: 28px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 20px;
+}
+
+
+.president-quote span {
+  width: 80px;
+  height: 3px;
+
+  background: #e86f05;
+
+  display: block;
+}
+
+
+.president-quote strong {
+  color: #df6200;
+
+  font-size: 22px;
+
+  font-weight: 800;
+
+  white-space: nowrap;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1000px) {
+
+  .president-container {
+    grid-template-columns: 1fr;
+
+    gap: 60px;
+  }
+
+
+  .president-left {
+    max-width: 500px;
+
+    margin: 0 auto;
+  }
+
+
+  .president-right {
+    max-width: 800px;
+
+    margin: 0 auto;
+  }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+  .president-profile {
+    padding: 70px 0;
+  }
+
+
+  .president-container {
+    width: 90%;
+
+    gap: 45px;
+  }
+
+
+  .president-photo-box {
+    height: 430px;
+
+    border-radius: 28px;
+  }
+
+
+  .president-photo-box img {
+    border-radius: 20px;
+  }
+
+
+  .president-photo-box::before,
+  .president-photo-box::after {
+    width: 55px;
+    height: 55px;
+  }
+
+
+  .president-name1 {
+    gap: 12px;
+  }
+
+
+  .president-name1 span {
+    width: 35px;
+  }
+
+
+  .president-name1 h2 {
+    font-size: 25px;
+  }
+
+
+  .president-designation {
+    font-size: 18px;
+  }
+
+
+  .president-badge {
+    font-size: 14px;
+
+    padding: 8px 18px;
+  }
+
+
+  .president-right h1 {
+    font-size: 39px;
+  }
+
+
+  .president-right h3 {
+    font-size: 20px;
+  }
+
+
+  .intro-heading h2 {
+    font-size: 25px;
+  }
+
+
+  .president-content p {
+    font-size: 16px;
+
+    line-height: 1.75;
+  }
+
+
+  .president-quote {
+    gap: 10px;
+  }
+
+
+  .president-quote span {
+    width: 25px;
+  }
+
+
+  .president-quote strong {
+    font-size: 16px;
+
+    white-space: normal;
+
+    text-align: center;
+  }
+
+}

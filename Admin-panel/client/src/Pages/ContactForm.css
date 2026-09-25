@@ -1,0 +1,370 @@
+/* =========================================
+   CONTACT ADMIN PAGE
+========================================= */
+
+.admin-contact-page {
+  width: 100%;
+  min-height: 100vh;
+  padding: 30px;
+  background: #f6f7fb;
+  box-sizing: border-box;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.admin-contact-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+
+.admin-contact-header h1 {
+  margin: 0;
+  font-size: 30px;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.admin-contact-header p {
+  margin: 7px 0 0;
+  font-size: 15px;
+  color: #6b7280;
+}
+
+
+/* =========================================
+   LOADING
+========================================= */
+
+.contact-loading {
+  min-height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #ffffff;
+  border-radius: 14px;
+  color: #6b7280;
+  font-size: 16px;
+}
+
+
+/* =========================================
+   NO CONTACTS
+========================================= */
+
+.no-contacts {
+  min-height: 250px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #ffffff;
+  border-radius: 14px;
+
+  border: 1px solid #e5e7eb;
+}
+
+.no-contacts h3 {
+  margin: 0;
+  color: #6b7280;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+
+/* =========================================
+   CONTACT GRID
+========================================= */
+
+.admin-contact-grid {
+  display: grid;
+
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(320px, 1fr)
+  );
+
+  gap: 22px;
+}
+
+
+/* =========================================
+   CONTACT CARD
+========================================= */
+
+.admin-contact-card {
+  background: #ffffff;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 16px;
+
+  padding: 22px;
+
+  box-shadow:
+    0 4px 15px rgba(0, 0, 0, 0.05);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+
+  position: relative;
+}
+
+.admin-contact-card:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =========================================
+   NEW MESSAGE
+========================================= */
+
+.admin-contact-card.new-message {
+  border-left: 4px solid #f97316;
+}
+
+
+/* =========================================
+   CARD TOP
+========================================= */
+
+.contact-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 15px;
+
+  padding-bottom: 15px;
+
+  border-bottom: 1px solid #eeeeee;
+}
+
+.contact-card-top h2 {
+  margin: 0 0 8px;
+
+  font-size: 20px;
+  font-weight: 700;
+
+  color: #111827;
+}
+
+.contact-card-top small {
+  color: #9ca3af;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+
+/* =========================================
+   STATUS
+========================================= */
+
+.status-new,
+.status-read {
+  display: inline-flex;
+
+  align-items: center;
+
+  padding: 4px 10px;
+
+  border-radius: 20px;
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.status-new {
+  background: #fff1e8;
+  color: #ea580c;
+}
+
+.status-read {
+  background: #ecfdf5;
+  color: #059669;
+}
+
+
+/* =========================================
+   CONTACT INFO
+========================================= */
+
+.contact-info {
+  padding: 16px 0;
+
+  border-bottom: 1px solid #eeeeee;
+}
+
+.contact-info p {
+  margin: 7px 0;
+
+  font-size: 14px;
+
+  color: #4b5563;
+
+  line-height: 1.6;
+}
+
+.contact-info strong {
+  color: #1f2937;
+}
+
+
+/* =========================================
+   MESSAGE
+========================================= */
+
+.contact-message {
+  padding: 18px 0;
+}
+
+.contact-message strong {
+  display: block;
+
+  margin-bottom: 8px;
+
+  font-size: 14px;
+
+  color: #111827;
+}
+
+.contact-message p {
+  margin: 0;
+
+  color: #4b5563;
+
+  font-size: 14px;
+
+  line-height: 1.7;
+
+  word-break: break-word;
+}
+
+
+/* =========================================
+   ACTIONS
+========================================= */
+
+.contact-actions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding-top: 5px;
+}
+
+.contact-actions button {
+  border: none;
+
+  padding: 9px 15px;
+
+  border-radius: 8px;
+
+  background: #111827;
+
+  color: #ffffff;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.contact-actions button:hover {
+  background: #374151;
+}
+
+
+/* =========================================
+   DELETE BUTTON
+========================================= */
+
+.contact-actions .delete-contact {
+  background: #fee2e2;
+
+  color: #dc2626;
+}
+
+.contact-actions .delete-contact:hover {
+  background: #fecaca;
+
+  color: #b91c1c;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 768px) {
+
+  .admin-contact-page {
+    padding: 20px 15px;
+  }
+
+  .admin-contact-header h1 {
+    font-size: 25px;
+  }
+
+  .admin-contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-contact-card {
+    padding: 18px;
+  }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+  .admin-contact-header {
+    margin-bottom: 20px;
+  }
+
+  .admin-contact-header h1 {
+    font-size: 22px;
+  }
+
+  .admin-contact-header p {
+    font-size: 13px;
+  }
+
+  .contact-card-top {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .contact-card-top small {
+    white-space: normal;
+  }
+
+  .contact-actions {
+    flex-wrap: wrap;
+  }
+
+  .contact-actions button {
+    padding: 8px 13px;
+  }
+
+}

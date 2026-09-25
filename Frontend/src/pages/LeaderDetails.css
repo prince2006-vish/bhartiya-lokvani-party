@@ -1,0 +1,293 @@
+/* =================================
+   LEADER DETAILS PAGE
+================================= */
+
+.leader-details-page {
+  width: 100%;
+  min-height: 100vh;
+  padding: 70px 20px;
+  background: #fffaf3;
+  box-sizing: border-box;
+}
+
+.leader-details-container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* =================================
+   TOP SECTION
+================================= */
+
+.leader-details-top {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 50px;
+
+  background: #ffffff;
+  padding: 35px;
+
+  border-radius: 18px;
+
+  box-shadow: 0 8px 35px rgba(0, 0, 0, 0.08);
+}
+
+/* Photo */
+
+.leader-details-photo {
+  width: 100%;
+  height: 450px;
+  overflow: hidden;
+  border-radius: 14px;
+  background: #f3f3f3;
+}
+
+.leader-details-photo img {
+  width: 100%;
+  height: 100%;
+  display: block;
+
+  object-fit: cover;
+  object-position: center top;
+}
+
+/* Intro */
+
+.leader-details-intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.leader-details-intro h1 {
+  margin: 0 0 12px;
+
+  font-size: 42px;
+  line-height: 1.2;
+
+  color: #171717;
+  font-weight: 800;
+}
+
+.leader-details-intro h2 {
+  margin: 0 0 22px;
+
+  color: #d97706;
+
+  font-size: 21px;
+  font-weight: 700;
+}
+
+.leader-details-intro p {
+  margin: 0;
+
+  color: #666;
+
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+/* =================================
+   INFORMATION
+================================= */
+
+.leader-information {
+  margin-top: 30px;
+
+  background: #ffffff;
+  padding: 35px;
+
+  border-radius: 18px;
+
+  box-shadow: 0 8px 35px rgba(0, 0, 0, 0.07);
+}
+
+.leader-information h2 {
+  margin: 0 0 18px;
+
+  color: #171717;
+
+  font-size: 25px;
+  font-weight: 800;
+}
+
+.leader-information p {
+  margin: 0;
+
+  color: #555;
+
+  font-size: 16px;
+  line-height: 1.9;
+
+  white-space: pre-line;
+}
+
+/* =================================
+   INFO GRID
+================================= */
+
+.leader-info-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 15px;
+
+  margin-top: 30px;
+}
+
+.leader-info-grid > div {
+  display: flex;
+  flex-direction: column;
+
+  gap: 7px;
+
+  padding: 18px;
+
+  background: #fffaf3;
+
+  border: 1px solid #f0e4d3;
+
+  border-radius: 10px;
+}
+
+.leader-info-grid strong {
+  color: #d97706;
+
+  font-size: 14px;
+}
+
+.leader-info-grid span {
+  color: #333;
+
+  font-size: 15px;
+
+  line-height: 1.5;
+}
+
+/* =================================
+   ACHIEVEMENTS
+================================= */
+
+.leader-achievements {
+  margin-top: 35px;
+
+  padding-top: 30px;
+
+  border-top: 1px solid #eee;
+}
+
+.leader-achievements h2 {
+  margin-bottom: 15px;
+}
+
+/* =================================
+   LOADING
+================================= */
+
+.leader-details-loading {
+  min-height: 70vh;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  color: #777;
+
+  font-size: 18px;
+}
+
+/* =================================
+   NOT FOUND
+================================= */
+
+.leader-not-found {
+  min-height: 70vh;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  color: #777;
+
+  font-size: 18px;
+}
+
+/* =================================
+   TABLET
+================================= */
+
+@media (max-width: 900px) {
+  .leader-details-top {
+    grid-template-columns: 300px 1fr;
+
+    gap: 30px;
+
+    padding: 25px;
+  }
+
+  .leader-details-photo {
+    height: 380px;
+  }
+
+  .leader-details-intro h1 {
+    font-size: 34px;
+  }
+
+  .leader-details-intro h2 {
+    font-size: 18px;
+  }
+}
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 650px) {
+  .leader-details-page {
+    padding: 40px 15px;
+  }
+
+  .leader-details-top {
+    grid-template-columns: 1fr;
+
+    gap: 25px;
+
+    padding: 20px;
+  }
+
+  .leader-details-photo {
+    height: 400px;
+  }
+
+  .leader-details-intro {
+    text-align: center;
+  }
+
+  .leader-details-intro h1 {
+    font-size: 30px;
+  }
+
+  .leader-details-intro h2 {
+    font-size: 18px;
+  }
+
+  .leader-details-intro p {
+    font-size: 15px;
+  }
+
+  .leader-information {
+    padding: 22px;
+  }
+
+  .leader-information h2 {
+    font-size: 22px;
+  }
+
+  .leader-info-grid {
+    grid-template-columns: 1fr;
+  }
+}

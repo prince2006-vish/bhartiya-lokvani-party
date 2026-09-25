@@ -1,0 +1,409 @@
+.video-gallery {
+  min-height: 100vh;
+  background: #f6f8fb;
+  padding: 90px 7%;
+  font-family: "Noto Sans Devanagari", sans-serif;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.video-header {
+  max-width: 750px;
+  margin: 0 auto 45px;
+  text-align: center;
+}
+
+.video-header span {
+  color: #15951a;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.video-header h1 {
+  margin: 8px 0 12px;
+  font-size: 52px;
+  font-weight: 800;
+  color: #11182b;
+}
+
+.video-header p {
+  color: #687386;
+  font-size: 19px;
+  line-height: 1.7;
+}
+
+.video-line {
+  width: 70px;
+  height: 4px;
+  background: #ff8b25;
+  margin: 25px auto 0;
+}
+
+/* =========================
+   FILTERS
+========================= */
+
+.video-filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 45px;
+}
+
+.video-filter {
+  padding: 10px 25px;
+  border: 1px solid #d8dee7;
+  background: white;
+  color: #263247;
+  border-radius: 4px;
+
+  font-family: inherit;
+  font-size: 16px;
+
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.video-filter:hover {
+  color: #ff8b25;
+  border-color: #ff8b25;
+}
+
+.video-filter.active {
+  background: #ff8b25;
+  color: white;
+  border-color: #ff8b25;
+}
+
+/* =========================
+   GRID
+========================= */
+
+.video-grid {
+  max-width: 1450px;
+  margin: auto;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.video-card {
+  background: white;
+  cursor: pointer;
+
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.07);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.video-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.13);
+}
+
+/* =========================
+   THUMBNAIL
+========================= */
+
+.video-thumbnail {
+  position: relative;
+  height: 270px;
+  overflow: hidden;
+}
+
+.video-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  transition: transform 0.5s ease;
+}
+
+.video-card:hover .video-thumbnail img {
+  transform: scale(1.07);
+}
+
+.video-overlay {
+  position: absolute;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.2);
+
+  transition: background 0.3s ease;
+}
+
+.video-card:hover .video-overlay {
+  background: rgba(0, 0, 0, 0.38);
+}
+
+/* =========================
+   PLAY BUTTON
+========================= */
+
+.play-button {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  width: 68px;
+  height: 68px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #ff8b25;
+  color: white;
+
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
+}
+
+.play-button span {
+  font-size: 25px;
+  margin-left: 4px;
+}
+
+.video-card:hover .play-button {
+  transform: translate(-50%, -50%) scale(1.12);
+}
+
+/* =========================
+   CATEGORY
+========================= */
+
+.video-category {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+
+  padding: 5px 12px;
+
+  background: #15951a;
+  color: white;
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* =========================
+   INFO
+========================= */
+
+.video-info {
+  padding: 20px 22px 22px;
+}
+
+.video-info h3 {
+  margin: 0 0 8px;
+
+  font-size: 21px;
+  font-weight: 700;
+
+  color: #11182b;
+}
+
+.video-info p {
+  margin: 0;
+
+  font-size: 15px;
+  color: #687386;
+}
+
+.video-info p span {
+  color: #ff8b25;
+  font-size: 18px;
+}
+
+/* =========================
+   LIGHTBOX
+========================= */
+
+.video-lightbox {
+  position: fixed;
+  inset: 0;
+
+  z-index: 9999;
+
+  background: rgba(5, 10, 20, 0.94);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 30px;
+}
+
+.video-player-container {
+  width: min(1000px, 90vw);
+}
+
+.video-player {
+  display: block;
+
+  width: 100%;
+  max-height: 75vh;
+
+  background: black;
+}
+
+.video-player-container h3 {
+  color: white;
+  margin-top: 15px;
+
+  font-size: 22px;
+}
+
+.video-close {
+  position: absolute;
+
+  top: 20px;
+  right: 30px;
+
+  width: 48px;
+  height: 48px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: white;
+  color: #11182b;
+
+  font-size: 32px;
+  line-height: 1;
+
+  cursor: pointer;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1000px) {
+  .video-gallery {
+    padding: 70px 5%;
+  }
+
+  .video-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .video-header h1 {
+    font-size: 44px;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+  .video-gallery {
+    padding: 55px 20px;
+  }
+
+  .video-header h1 {
+    font-size: 38px;
+  }
+
+  .video-header p {
+    font-size: 16px;
+  }
+
+  .video-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .video-thumbnail {
+    height: 240px;
+  }
+
+  .video-filter {
+    padding: 8px 17px;
+    font-size: 14px;
+  }
+
+  .video-player-container {
+    width: 100%;
+  }
+
+  .video-close {
+    top: 10px;
+    right: 15px;
+  }
+}
+
+/* ========================= SHOW ALL VIDEOS BUTTON ========================= */
+.show-all-videos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 35px;
+}
+.show-all-video-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 13px 30px;
+  border: 1px solid #ff8b25;
+  border-radius: 4px;
+  background: #ff8b25;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+.show-all-video-btn span {
+  font-size: 21px;
+  line-height: 1;
+  transition: transform 0.3s ease;
+}
+.show-all-video-btn:hover {
+  background: #ffffff;
+  color: #ff8b25;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+.show-all-video-btn:hover span {
+  transform: translateX(5px);
+} /* ========================= FULL VIDEOS PAGE ========================= */
+.videos-full-page {
+  min-height: 100vh;
+} /* ========================= MOBILE ========================= */
+@media (max-width: 600px) {
+  .show-all-videos {
+    margin-top: 28px;
+  }
+  .show-all-video-btn {
+    width: 100%;
+    max-width: 260px;
+    padding: 12px 22px;
+    font-size: 15px;
+  }
+}
