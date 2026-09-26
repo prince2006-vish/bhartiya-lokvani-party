@@ -70,7 +70,7 @@ function Navbar() {
             <button className="admin-btn">
               <a
                 className="admin-link"
-                href="http://localhost:5174/login"
+                href="https://bhartiya-lokvani-party.vercel.app/login"
                 target="_blank"
               >
                 Admin Login
@@ -79,7 +79,6 @@ function Navbar() {
           </nav>
         </div>
       </header>
-      
     </div>
   );
 }
