@@ -140,7 +140,7 @@ function Login() {
           <p>समाचार, कार्यक्रम और जनता की आवाज़ को एक ही जगह से संभालें।</p>
         </div>
 
-        <div className="left-footer">भारती लोक वाणी पार्टी · Admin Console</div>
+        <div className="left-footer">भारतीय लोक वाणी पार्टी · Admin Console</div>
       </section>
 
       {/* RIGHT SIDE */}
