@@ -122,7 +122,7 @@ function Login() {
           type="button"
           className="public-link"
           onClick={() => {
-            window.location.href = "http://localhost:5173/"; 
+            window.location.href = "hhttps://bhartiyalokvanipartya.vercel.app/"; 
           }}
         >
           ← सार्वजनिक वेबसाइट
