@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bhartiyalokvanipartya.vercel.app/sitemap.xml
