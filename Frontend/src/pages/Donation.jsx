@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import jsPDF from "jspdf";
 import "./Donation.css";
+import SEO from "../components/SEO";
 
 const API_URL = "https://bhartiya-lokvani-api.onrender.com";
 
@@ -400,145 +401,152 @@ export default function Donation() {
   // ==================================
 
   return (
-    <section className="donation-page">
-      <div className="donation-container">
-        <div className="donation-header">
-          <span className="donation-label">सहयोग करें</span>
+    <>
+      <SEO
+        title="सहयोग करें | Support Bhartiya Lokvani Party"
+        description="भारतीय लोकवाणी पार्टी के कार्यों में सहयोग से संबंधित जानकारी। Information about supporting Bhartiya Lokvani Party."
+        url="https://bhartiyalokvanipartya.vercel.app/donation"
+      />
+      <section className="donation-page">
+        <div className="donation-container">
+          <div className="donation-header">
+            <span className="donation-label">सहयोग करें</span>
 
-          <h1>भारतीय लोकवाणी पार्टी</h1>
+            <h1>भारतीय लोकवाणी पार्टी</h1>
 
-          <p>
-            आप अपनी इच्छानुसार सहयोग राशि देकर संगठन की गतिविधियों में योगदान कर
-            सकते हैं।
-          </p>
+            <p>
+              आप अपनी इच्छानुसार सहयोग राशि देकर संगठन की गतिविधियों में योगदान
+              कर सकते हैं।
+            </p>
 
-          <div className="donation-line"></div>
-        </div>
-
-        <div className="donation-grid">
-          <div className="donation-info">
-            <div className="donation-card">
-              <div className="donation-card-icon">₹</div>
-
-              <h2>अपना सहयोग दें</h2>
-
-              <p>आप अपनी इच्छानुसार सहयोग राशि चुन सकते हैं।</p>
-            </div>
-
-            <div className="donation-note">
-              <h3>सहयोग का महत्व</h3>
-
-              <p>
-                आपके द्वारा दिया गया सहयोग संगठन की विभिन्न गतिविधियों और
-                कार्यक्रमों के संचालन में उपयोग किया जा सकता है।
-              </p>
-            </div>
+            <div className="donation-line"></div>
           </div>
 
-          <div className="donation-form-card">
-            <form onSubmit={handleSubmit}>
-              <h2>Donation Details</h2>
+          <div className="donation-grid">
+            <div className="donation-info">
+              <div className="donation-card">
+                <div className="donation-card-icon">₹</div>
 
-              <div className="form-group">
-                <label>सहयोग राशि</label>
+                <h2>अपना सहयोग दें</h2>
 
-                <div className="amount-options">
-                  {amounts.map((amount) => (
-                    <button
-                      type="button"
-                      key={amount}
-                      className={
-                        Number(selectedAmount) === amount
-                          ? "amount-btn active"
-                          : "amount-btn"
-                      }
-                      onClick={() => handleAmount(amount)}
-                    >
-                      ₹{amount}
-                    </button>
-                  ))}
+                <p>आप अपनी इच्छानुसार सहयोग राशि चुन सकते हैं।</p>
+              </div>
+
+              <div className="donation-note">
+                <h3>सहयोग का महत्व</h3>
+
+                <p>
+                  आपके द्वारा दिया गया सहयोग संगठन की विभिन्न गतिविधियों और
+                  कार्यक्रमों के संचालन में उपयोग किया जा सकता है।
+                </p>
+              </div>
+            </div>
+
+            <div className="donation-form-card">
+              <form onSubmit={handleSubmit}>
+                <h2>Donation Details</h2>
+
+                <div className="form-group">
+                  <label>सहयोग राशि</label>
+
+                  <div className="amount-options">
+                    {amounts.map((amount) => (
+                      <button
+                        type="button"
+                        key={amount}
+                        className={
+                          Number(selectedAmount) === amount
+                            ? "amount-btn active"
+                            : "amount-btn"
+                        }
+                        onClick={() => handleAmount(amount)}
+                      >
+                        ₹{amount}
+                      </button>
+                    ))}
+                  </div>
+
+                  <input
+                    type="number"
+                    name="amount"
+                    min="1"
+                    placeholder="अपनी राशि दर्ज करें"
+                    value={form.amount}
+                    onChange={handleChange}
+                    required
+                  />
                 </div>
 
-                <input
-                  type="number"
-                  name="amount"
-                  min="1"
-                  placeholder="अपनी राशि दर्ज करें"
-                  value={form.amount}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
+                <div className="form-group">
+                  <label>पूरा नाम *</label>
 
-              <div className="form-group">
-                <label>पूरा नाम *</label>
+                  <input
+                    type="text"
+                    name="donorName"
+                    placeholder="अपना नाम दर्ज करें"
+                    value={form.donorName}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
 
-                <input
-                  type="text"
-                  name="donorName"
-                  placeholder="अपना नाम दर्ज करें"
-                  value={form.donorName}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
+                <div className="form-group">
+                  <label>मोबाइल नंबर *</label>
 
-              <div className="form-group">
-                <label>मोबाइल नंबर *</label>
+                  <input
+                    type="tel"
+                    name="phone"
+                    placeholder="10 अंकों का मोबाइल नंबर"
+                    value={form.phone}
+                    onChange={handleChange}
+                    maxLength="10"
+                    inputMode="numeric"
+                    required
+                  />
+                </div>
 
-                <input
-                  type="tel"
-                  name="phone"
-                  placeholder="10 अंकों का मोबाइल नंबर"
-                  value={form.phone}
-                  onChange={handleChange}
-                  maxLength="10"
-                  inputMode="numeric"
-                  required
-                />
-              </div>
+                <div className="form-group">
+                  <label>Email</label>
 
-              <div className="form-group">
-                <label>Email</label>
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="example@email.com"
+                    value={form.email}
+                    onChange={handleChange}
+                  />
+                </div>
 
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="example@email.com"
-                  value={form.email}
-                  onChange={handleChange}
-                />
-              </div>
+                <div className="form-group">
+                  <label>Payment Method</label>
 
-              <div className="form-group">
-                <label>Payment Method</label>
+                  <input type="text" value="Razorpay" readOnly />
+                </div>
 
-                <input type="text" value="Razorpay" readOnly />
-              </div>
+                <div className="form-group">
+                  <label>संदेश</label>
 
-              <div className="form-group">
-                <label>संदेश</label>
+                  <textarea
+                    name="message"
+                    rows="4"
+                    placeholder="कोई संदेश लिखें..."
+                    value={form.message}
+                    onChange={handleChange}
+                  />
+                </div>
 
-                <textarea
-                  name="message"
-                  rows="4"
-                  placeholder="कोई संदेश लिखें..."
-                  value={form.message}
-                  onChange={handleChange}
-                />
-              </div>
-
-              <button
-                type="submit"
-                className="donation-submit-btn"
-                disabled={loading}
-              >
-                {loading ? "Payment खुल रहा है..." : "Donation करें →"}
-              </button>
-            </form>
+                <button
+                  type="submit"
+                  className="donation-submit-btn"
+                  disabled={loading}
+                >
+                  {loading ? "Payment खुल रहा है..." : "Donation करें →"}
+                </button>
+              </form>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }

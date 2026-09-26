@@ -7,10 +7,16 @@ import PartyPresidents from "../components/PartyPresidents";
 import PhotoGallery from "../components/PhotoGallery";
 import VideoGallery from "../components/VideoGallery";
 import Hero from "../components/Hero";
+import SEO from "../components/SEO";
 
 function Home() {
   return (
     <>
+      <SEO
+        title="भारतीय लोकवाणी पार्टी | Bhartiya Lokvani Party"
+        description="भारतीय लोकवाणी पार्टी (Bhartiya Lokvani Party) की आधिकारिक वेबसाइट। पार्टी की नीतियां, समाचार, कार्यक्रम, नेतृत्व, सदस्यता और जनसंपर्क से जुड़ी जानकारी।"
+        url="https://bhartiyalokvanipartya.vercel.app/"
+      />
       <Hero />
       <List />
       <PartyPresidents />

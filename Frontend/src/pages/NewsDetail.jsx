@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import "./NewsDetail.css";
+import SEO from "../components/SEO";
 
 const NewsDetail = () => {
   const { id } = useParams();
@@ -36,31 +37,38 @@ const NewsDetail = () => {
   }
 
   return (
-    <div className="news-detail-page">
-      <div className="news-detail-container">
-        <Link to="/" className="back-link">
-          ← वापस जाएँ
-        </Link>
+    <>
+      <SEO
+        title={`${news.title} | Bhartiya Lokvani Party`}
+        description={news.description}
+        url={`https://bhartiyalokvanipartya.vercel.app/news/${news._id}`}
+      />
+      <div className="news-detail-page">
+        <div className="news-detail-container">
+          <Link to="/" className="back-link">
+            ← वापस जाएँ
+          </Link>
 
-        <div className="detail-date">
-          {news.date
-            ? new Date(news.date).toLocaleDateString("en-GB", {
-                day: "2-digit",
-                month: "long",
-                year: "numeric",
-              })
-            : ""}
+          <div className="detail-date">
+            {news.date
+              ? new Date(news.date).toLocaleDateString("en-GB", {
+                  day: "2-digit",
+                  month: "long",
+                  year: "numeric",
+                })
+              : ""}
+          </div>
+
+          <h1>{news.title}</h1>
+
+          {news.category && (
+            <div className="detail-category">{news.category}</div>
+          )}
+
+          <div className="detail-description">{news.description}</div>
         </div>
-
-        <h1>{news.title}</h1>
-
-        {news.category && (
-          <div className="detail-category">{news.category}</div>
-        )}
-
-        <div className="detail-description">{news.description}</div>
       </div>
-    </div>
+    </>
   );
 };
 

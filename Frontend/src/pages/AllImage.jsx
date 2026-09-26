@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../components/PhotoGallery.css";
+import SEO from "../components/SEO";
 
 const API_URL = "https://bhartiya-lokvani-api.onrender.com";
 
@@ -63,123 +64,133 @@ function AllImage() {
       : galleryData.filter((item) => item.category === activeCategory);
 
   return (
-    <section className="gallery-page">
-      {/* =========================
+    <>
+      <SEO
+        title="फोटो गैलरी | Photo Gallery | Bhartiya Lokvani Party"
+        description="भारतीय लोकवाणी पार्टी के कार्यक्रमों और गतिविधियों की फोटो गैलरी। Photos and activities of Bhartiya Lokvani Party."
+        url="https://bhartiyalokvanipartya.vercel.app/gallery"
+      />
+      <section className="gallery-page">
+        {/* =========================
           HEADER
       ========================= */}
 
-      <div className="gallery-header">
-        <span className="gallery-small-title">हमारी गतिविधियां</span>
+        <div className="gallery-header">
+          <span className="gallery-small-title">हमारी गतिविधियां</span>
 
-        <h1>फोटो गैलरी</h1>
+          <h1>फोटो गैलरी</h1>
 
-        <p>
-          जनता के साथ हमारे संवाद, कार्यक्रमों और सामाजिक गतिविधियों की कुछ
-          यादगार झलकियां।
-        </p>
+          <p>
+            जनता के साथ हमारे संवाद, कार्यक्रमों और सामाजिक गतिविधियों की कुछ
+            यादगार झलकियां।
+          </p>
 
-        <div className="gallery-line"></div>
-      </div>
+          <div className="gallery-line"></div>
+        </div>
 
-      {/* =========================
+        {/* =========================
           CATEGORY FILTERS
       ========================= */}
 
-      <div className="gallery-filters">
-        {allCategories.map((category) => (
-          <button
-            key={category}
-            className={
-              activeCategory === category ? "filter-btn active" : "filter-btn"
-            }
-            onClick={() => setActiveCategory(category)}
-          >
-            {category}
-          </button>
-        ))}
-      </div>
+        <div className="gallery-filters">
+          {allCategories.map((category) => (
+            <button
+              key={category}
+              className={
+                activeCategory === category ? "filter-btn active" : "filter-btn"
+              }
+              onClick={() => setActiveCategory(category)}
+            >
+              {category}
+            </button>
+          ))}
+        </div>
 
-      {/* =========================
+        {/* =========================
           LOADING
       ========================= */}
 
-      {loading && (
-        <div className="gallery-message">
-          <p>फोटो लोड हो रही हैं...</p>
-        </div>
-      )}
+        {loading && (
+          <div className="gallery-message">
+            <p>फोटो लोड हो रही हैं...</p>
+          </div>
+        )}
 
-      {/* =========================
+        {/* =========================
           ERROR
       ========================= */}
 
-      {!loading && error && (
-        <div className="gallery-message">
-          <p>{error}</p>
-        </div>
-      )}
+        {!loading && error && (
+          <div className="gallery-message">
+            <p>{error}</p>
+          </div>
+        )}
 
-      {/* =========================
+        {/* =========================
           NO DATA
       ========================= */}
 
-      {!loading && !error && filteredImages.length === 0 && (
-        <div className="gallery-message">
-          <p>अभी इस category में कोई फोटो उपलब्ध नहीं है।</p>
-        </div>
-      )}
+        {!loading && !error && filteredImages.length === 0 && (
+          <div className="gallery-message">
+            <p>अभी इस category में कोई फोटो उपलब्ध नहीं है।</p>
+          </div>
+        )}
 
-      {/* =========================
+        {/* =========================
           GALLERY GRID
       ========================= */}
 
-      {!loading && !error && filteredImages.length > 0 && (
-        <div className="gallery-grid">
-          {filteredImages.map((item) => (
-            <div
-              className="gallery-item"
-              key={item._id || item.id}
-              onClick={() => setSelectedImage(item)}
-            >
-              <img
-                src={item.imageUrl}
-                alt={item.title}
-                loading="lazy"
-                onError={(e) => {
-                  e.currentTarget.style.display = "none";
-                }}
-              />
+        {!loading && !error && filteredImages.length > 0 && (
+          <div className="gallery-grid">
+            {filteredImages.map((item) => (
+              <div
+                className="gallery-item"
+                key={item._id || item.id}
+                onClick={() => setSelectedImage(item)}
+              >
+                <img
+                  src={item.imageUrl}
+                  alt={item.title}
+                  loading="lazy"
+                  onError={(e) => {
+                    e.currentTarget.style.display = "none";
+                  }}
+                />
 
-              <div className="gallery-overlay">
-                <span>{item.category || "जनता"}</span>
+                <div className="gallery-overlay">
+                  <span>{item.category || "जनता"}</span>
 
-                <h3>{item.title}</h3>
+                  <h3>{item.title}</h3>
+                </div>
               </div>
-            </div>
-          ))}
-        </div>
-      )}
+            ))}
+          </div>
+        )}
 
-      {/* =========================
+        {/* =========================
           LIGHTBOX
       ========================= */}
 
-      {selectedImage && (
-        <div className="lightbox" onClick={() => setSelectedImage(null)}>
-          <button className="close-btn" onClick={() => setSelectedImage(null)}>
-            ×
-          </button>
+        {selectedImage && (
+          <div className="lightbox" onClick={() => setSelectedImage(null)}>
+            <button
+              className="close-btn"
+              onClick={() => setSelectedImage(null)}
+            >
+              ×
+            </button>
 
-          <img
-            src={selectedImage.imageUrl}
-            alt={selectedImage.title}
-            onClick={(e) => e.stopPropagation()}
-          />
+            <img
+              src={selectedImage.imageUrl}
+              alt={selectedImage.title}
+              onClick={(e) => e.stopPropagation()}
+            />
 
-          <div className="lightbox-title">{selectedImage.title}</div>
-        </div>
-      )}
-    </section>
+            <div className="lightbox-title">{selectedImage.title}</div>
+          </div>
+        )}
+      </section>
+    </>
   );
 }
 

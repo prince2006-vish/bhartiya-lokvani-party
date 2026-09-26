@@ -4,6 +4,7 @@ import "./Contact.css";
 import img1 from "../assets/lalji.png";
 import img2 from "../assets/images2.png";
 import img3 from "../assets/image5.png";
+import SEO from "../components/SEO";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -507,177 +508,184 @@ const Contact = () => {
   // ==========================================
 
   return (
-    <section className="membership-section">
-      <div className="membership-container">
-        {/* LEFT CONTENT */}
+    <>
+      <SEO
+        title="सदस्य बनें | Join Bhartiya Lokvani Party"
+        description="भारतीय लोकवाणी पार्टी से जुड़ें और सदस्यता के लिए आवेदन करें। Join Bhartiya Lokvani Party and apply for membership."
+        url="https://bhartiyalokvanipartya.vercel.app/join-us"
+      />
+      <section className="membership-section">
+        <div className="membership-container">
+          {/* LEFT CONTENT */}
 
-        <div className="membership-intro">
-          <span className="eyebrow">सदस्य बनें</span>
+          <div className="membership-intro">
+            <span className="eyebrow">सदस्य बनें</span>
 
-          <h1>
-            बदलाव की इस यात्रा
-            <br />
-            में आपका स्वागत है
-          </h1>
+            <h1>
+              बदलाव की इस यात्रा
+              <br />
+              में आपका स्वागत है
+            </h1>
 
-          <p>
-            आपकी भागीदारी ही हमारी सबसे बड़ी ताकत है। सदस्यता
-            <br className="desktop-break" />
-            आवेदन भरें, हमारी टीम आपसे संपर्क करेगी।
-          </p>
+            <p>
+              आपकी भागीदारी ही हमारी सबसे बड़ी ताकत है। सदस्यता
+              <br className="desktop-break" />
+              आवेदन भरें, हमारी टीम आपसे संपर्क करेगी।
+            </p>
 
-          <div className="orange-line"></div>
+            <div className="orange-line"></div>
 
-          <div className="security-note">
-            <div className="shield-icon">
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                <path d="M12 3l8 4v5c0 5.5-3.5 8.5-8 10-4.5-1.5-8-4.5-8-10V7l8-4z" />
+            <div className="security-note">
+              <div className="shield-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                >
+                  <path d="M12 3l8 4v5c0 5.5-3.5 8.5-8 10-4.5-1.5-8-4.5-8-10V7l8-4z" />
 
-                <path d="M9 12l2 2 4-4" />
-              </svg>
+                  <path d="M9 12l2 2 4-4" />
+                </svg>
+              </div>
+
+              <span>आपकी जानकारी सुरक्षित रखी जाएगी</span>
             </div>
+          </div>
 
-            <span>आपकी जानकारी सुरक्षित रखी जाएगी</span>
+          {/* FORM CARD */}
+
+          <div className="membership-card">
+            <form onSubmit={handleSubmit}>
+              {/* PHOTO */}
+
+              <div className="photo-upload">
+                {preview ? (
+                  <img src={preview} alt="Preview" className="photo-preview" />
+                ) : (
+                  <div className="photo-placeholder">📷</div>
+                )}
+
+                <label htmlFor="member-image">फोटो अपलोड करें</label>
+
+                <input
+                  id="member-image"
+                  type="file"
+                  accept="image/*"
+                  onChange={handleImageChange}
+                />
+              </div>
+
+              {/* FORM INPUTS */}
+
+              <div className="form-grid">
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="पूरा नाम"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                />
+
+                <input
+                  type="tel"
+                  name="phone"
+                  placeholder="मोबाइल नंबर"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  required
+                />
+
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="ईमेल (वैकल्पिक)"
+                  value={formData.email}
+                  onChange={handleChange}
+                />
+
+                <input
+                  type="text"
+                  name="state"
+                  placeholder="राज्य"
+                  value={formData.state}
+                  onChange={handleChange}
+                  required
+                />
+
+                <input
+                  type="text"
+                  name="district"
+                  placeholder="जिला"
+                  value={formData.district}
+                  onChange={handleChange}
+                  required
+                />
+
+                <input
+                  type="number"
+                  name="age"
+                  placeholder="आयु"
+                  value={formData.age}
+                  onChange={handleChange}
+                  required
+                />
+
+                <input
+                  type="text"
+                  name="profession"
+                  placeholder="व्यवसाय"
+                  value={formData.profession}
+                  onChange={handleChange}
+                  required
+                />
+
+                <input
+                  type="text"
+                  name="address"
+                  placeholder="पता"
+                  value={formData.address}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+
+              {/* PURPOSE */}
+
+              <textarea
+                name="purpose"
+                placeholder="पार्टी से जुड़ने का उद्देश्य"
+                value={formData.purpose}
+                onChange={handleChange}
+                required
+              />
+
+              {/* CONSENT */}
+
+              <label className="consent">
+                <input type="checkbox" required />
+
+                <span>
+                  मैं सहमत हूँ कि पार्टी इस जानकारी का उपयोग सदस्यता संपर्क के
+                  लिए कर सकती है।
+                </span>
+              </label>
+
+              {/* SUBMIT */}
+
+              <button type="submit" disabled={loading}>
+                <span>
+                  {loading ? "आवेदन भेजा जा रहा है..." : "सदस्यता आवेदन भेजें"}
+                </span>
+
+                {!loading && <span className="arrow">→</span>}
+              </button>
+            </form>
           </div>
         </div>
-
-        {/* FORM CARD */}
-
-        <div className="membership-card">
-          <form onSubmit={handleSubmit}>
-            {/* PHOTO */}
-
-            <div className="photo-upload">
-              {preview ? (
-                <img src={preview} alt="Preview" className="photo-preview" />
-              ) : (
-                <div className="photo-placeholder">📷</div>
-              )}
-
-              <label htmlFor="member-image">फोटो अपलोड करें</label>
-
-              <input
-                id="member-image"
-                type="file"
-                accept="image/*"
-                onChange={handleImageChange}
-              />
-            </div>
-
-            {/* FORM INPUTS */}
-
-            <div className="form-grid">
-              <input
-                type="text"
-                name="name"
-                placeholder="पूरा नाम"
-                value={formData.name}
-                onChange={handleChange}
-                required
-              />
-
-              <input
-                type="tel"
-                name="phone"
-                placeholder="मोबाइल नंबर"
-                value={formData.phone}
-                onChange={handleChange}
-                required
-              />
-
-              <input
-                type="email"
-                name="email"
-                placeholder="ईमेल (वैकल्पिक)"
-                value={formData.email}
-                onChange={handleChange}
-              />
-
-              <input
-                type="text"
-                name="state"
-                placeholder="राज्य"
-                value={formData.state}
-                onChange={handleChange}
-                required
-              />
-
-              <input
-                type="text"
-                name="district"
-                placeholder="जिला"
-                value={formData.district}
-                onChange={handleChange}
-                required
-              />
-
-              <input
-                type="number"
-                name="age"
-                placeholder="आयु"
-                value={formData.age}
-                onChange={handleChange}
-                required
-              />
-
-              <input
-                type="text"
-                name="profession"
-                placeholder="व्यवसाय"
-                value={formData.profession}
-                onChange={handleChange}
-                required
-              />
-
-              <input
-                type="text"
-                name="address"
-                placeholder="पता"
-                value={formData.address}
-                onChange={handleChange}
-                required
-              />
-            </div>
-
-            {/* PURPOSE */}
-
-            <textarea
-              name="purpose"
-              placeholder="पार्टी से जुड़ने का उद्देश्य"
-              value={formData.purpose}
-              onChange={handleChange}
-              required
-            />
-
-            {/* CONSENT */}
-
-            <label className="consent">
-              <input type="checkbox" required />
-
-              <span>
-                मैं सहमत हूँ कि पार्टी इस जानकारी का उपयोग सदस्यता संपर्क के लिए
-                कर सकती है।
-              </span>
-            </label>
-
-            {/* SUBMIT */}
-
-            <button type="submit" disabled={loading}>
-              <span>
-                {loading ? "आवेदन भेजा जा रहा है..." : "सदस्यता आवेदन भेजें"}
-              </span>
-
-              {!loading && <span className="arrow">→</span>}
-            </button>
-          </form>
-        </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 
