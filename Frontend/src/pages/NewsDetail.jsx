@@ -40,7 +40,7 @@ const NewsDetail = () => {
     <>
       <SEO
         title={`${news.title} | Bhartiya Lokvani Party`}
-        description={news.description}
+        description={news.description?.slice(0, 160)}
         url={`https://bhartiyalokvanipartya.vercel.app/news/${news._id}`}
       />
       <div className="news-detail-page">
